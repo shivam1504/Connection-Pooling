@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<datasources>
+	<xa-datasource>
+	
+		<!--DATASOURCE NAME -->
+		<jndi-name>OCTOPUSDS</jndi-name>	
+		
+		<!--Driver CLASS-->
+		<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+		
+		<!--Connection URL -->
+		<xa-datasource-property name="URL">
+		jdbc:mysql://10.95.4.89:3306/OCTOPUS_MASTER?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8
+		</xa-datasource-property>
+		
+		<!--User-name-->
+		<xa-datasource-property name="User">octopusdb</xa-datasource-property>
+		
+		<!--Password-->
+		<xa-datasource-property name="Password">0ctopus@db321</xa-datasource-property>
+		
+		<!--Specifying a true value for this element makes the connection manager keep an xid to connection map and only put the 
+		connection back in the pool when the transaction completes and all the connection handles are closed or disassociated 
+		(by the method calls returning)-->
+		<track-connection-by-tx>true</track-connection-by-tx>
+		
+		
+		<!--The presence of this element indicates that two connection pools are required to isolate connections used with JTA 
+		transaction from those used without a JTA transaction. The pools are lazily constructed on first use. Its use case is 
+		for Oracle (and possibly other vendors) XA implementations that don't like using an XA connection with and without a 
+		JTA transaction-->
+		<no-tx-separate-pools>true</no-tx-separate-pools>
+		
+		
+		<!--This element specifies the minimum number of connections a pool should hold.
+		These pool instances are not created until an initial request for a connection is made. This default to 0 -->
+		<min-pool-size>5</min-pool-size>
+		
+		
+		<!--This element specifies the maximum number of connections for a pool.
+		No more than the max-pool-size number of connections will be created in a pool.This defaults to 20 -->
+		<max-pool-size>50</max-pool-size>
+		
+		
+		<!--This element specifies the maximum time in minutes a connection may be idle before being closed-->
+		<idle-timeout-minutes>10</idle-timeout-minutes>
+		
+		
+		<!--This specifies a class that implements the org.jboss.resource.adapter.jdbc.ExceptionSorter interface to examine database 
+		exceptions to determine whether or not the exception indicates a connection error--> 
+		<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+
+		<metadata>
+		<type-mapping>mySQL</type-mapping>
+		</metadata>
+		
+	</xa-datasource>
+</datasources>

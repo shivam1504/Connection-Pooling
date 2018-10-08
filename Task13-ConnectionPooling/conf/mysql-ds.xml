@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--  =====================================================================
+  -->
+<!--
+  -->
+<!--   JBoss Server Configuration
+  -->
+<!--
+  -->
+<!--  =====================================================================
+  -->
+<!--  ====================================================================
+  -->
+<!--   Datasource config for MySQL using 2.0.11 driver
+  -->
+<!--  ====================================================================
+  -->
+ <datasources>
+<xa-datasource>
+	<jndi-name>OCTOPUSDS</jndi-name>
+	<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+    <xa-datasource-property
+	name="URL">jdbc:mysql://10.95.4.89:3306/OCTOPUS_MASTER?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</xa-datasource-property>
+    <xa-datasource-property name="User">octopusdb</xa-datasource-property>
+    <xa-datasource-property name="Password">0ctopus@db321</xa-datasource-property>
+	<track-connection-by-tx>true</track-connection-by-tx>
+	<no-tx-separate-pools>true</no-tx-separate-pools>
+	<min-pool-size>5</min-pool-size>
+	<max-pool-size>50</max-pool-size>
+	<idle-timeout-minutes>10</idle-timeout-minutes>
+	<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+
+	<metadata>
+		<type-mapping>mySQL</type-mapping>
+	</metadata>
+	</xa-datasource>
+	
+	
+	<xa-datasource>
+		<jndi-name>GP_DATALINK</jndi-name>
+		<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>  
+		<xa-datasource-property name="URL">jdbc:mysql://10.95.4.89:3306/DATALINK?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</xa-datasource-property>
+		<xa-datasource-property name="User">octopusdb</xa-datasource-property>  
+		<xa-datasource-property name="Password">0ctopus@db321</xa-datasource-property>  
+		<track-connection-by-tx>true</track-connection-by-tx>
+		<no-tx-separate-pools>true</no-tx-separate-pools>
+		<min-pool-size>5</min-pool-size>  
+		<max-pool-size>15</max-pool-size> 
+		<idle-timeout-minutes>10</idle-timeout-minutes>
+		<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+			
+		<metadata>
+				<type-mapping>mySQL</type-mapping>
+		</metadata>
+		</xa-datasource>
+
+  <xa-datasource>
+	<jndi-name>OCTOPUS_COFFEE</jndi-name>
+	<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+    <xa-datasource-property name="URL">jdbc:mysql://10.95.4.89:3306/OCTOPUS_COFFEE?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</xa-datasource-property>
+    <xa-datasource-property name="User">octopusdb</xa-datasource-property>
+    <xa-datasource-property name="Password">0ctopus@db321</xa-datasource-property>
+	<track-connection-by-tx>true</track-connection-by-tx>
+	<no-tx-separate-pools>true</no-tx-separate-pools>
+	<min-pool-size>5</min-pool-size>
+	<max-pool-size>15</max-pool-size>
+	<idle-timeout-minutes>10</idle-timeout-minutes>
+	<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+
+	<metadata>
+	<type-mapping>mySQL</type-mapping>
+	</metadata>
+</xa-datasource>
+
+
+  <xa-datasource>
+	<jndi-name>OCTOPUS_TEA</jndi-name>
+	<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+    <xa-datasource-property name="URL">jdbc:mysql://10.95.4.89:3306/OCTOPUS_TEA?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</xa-datasource-property>
+    <xa-datasource-property name="User">octopusdb</xa-datasource-property>
+    <xa-datasource-property name="Password">0ctopus@db321</xa-datasource-property>
+	<track-connection-by-tx/>
+<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+	<min-pool-size>5</min-pool-size>
+	<max-pool-size>15</max-pool-size>
+	<idle-timeout-minutes>10</idle-timeout-minutes>
+
+  </xa-datasource>
+
+  <xa-datasource>
+	<jndi-name>OCTOPUS_COCOA</jndi-name>
+	<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+    <xa-datasource-property name="URL">jdbc:mysql://10.95.4.89:3306/OCTOPUS_COCOA?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</xa-datasource-property>
+    <xa-datasource-property name="User">octopusdb</xa-datasource-property>
+    <xa-datasource-property name="Password">0ctopus@db321</xa-datasource-property>
+	<track-connection-by-tx/>
+<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+	<min-pool-size>5</min-pool-size>
+	<max-pool-size>15</max-pool-size>
+	<idle-timeout-minutes>10</idle-timeout-minutes>
+  </xa-datasource>
+<xa-datasource>
+	<jndi-name>OCTOPUS_PALMOIL</jndi-name>
+	<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+    <xa-datasource-property name="URL">jdbc:mysql://10.95.4.89:3306/OCTOPUS_PALMOIL?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</xa-datasource-property>
+    <xa-datasource-property name="User">octopusdb</xa-datasource-property>
+    <xa-datasource-property name="Password">0ctopus@db321</xa-datasource-property>
+	<track-connection-by-tx/>
+<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+	<min-pool-size>5</min-pool-size>
+	<max-pool-size>15</max-pool-size>
+	<idle-timeout-minutes>10</idle-timeout-minutes>
+  </xa-datasource>
+<!-- datasources for DEV end-->
+  </datasources>

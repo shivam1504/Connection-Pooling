@@ -1,0 +1,25 @@
+To obtain a connection from a data source, do the following:
+
+Procedure To Connect to a Data Source
+
+Steps
+1.Obtain the initial JNDI context.
+
+  To guarantee portability between different environments,  
+  the code used to retrieve an InitialContext object (in a servlet, in a JSP page, or an EJB) is as follows:
+
+InitialContext ctx = new InitialContext();
+
+2.Use a JNDI lookup to obtain a data source reference.
+
+  To obtain a reference to a data source bound to the JNDI context, 
+  look up the data source’s JNDI name from the initial context object. 
+  The object retrieved in this way is cast as a DataSource type object:
+
+ds = (DataSource)ctx.lookup(JndiDataSourceName);
+
+3.Use the data source reference to obtain the connection.
+
+  This operation requires the following line of code:
+
+conn = ds.getConnection();
